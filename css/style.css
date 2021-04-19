@@ -29,7 +29,7 @@ body {
     padding: 10px 40px;
     border: 1px solid white;
     border-radius: 30px;
-    margin-right: 15px;
+    margin-right: 25px;
 }
 
 /* main */
@@ -146,22 +146,23 @@ body {
     margin: 0 10px;
     color: rgba(255, 255, 255, 0.6);
 }
-.music h2 {
+.recently h2 {
     margin: 20px 0;
     color: white;
 }
 .wrapper {
     padding: 0 20px;
 }
-.music_items {
+.recently_items {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 40px;
 }
 .item {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     width: calc((100% / 6) - 20px);
 }
@@ -169,11 +170,34 @@ body {
     width: 100%;
 }
 .item h3 {
+    text-align: center;
+    margin: 15px 0;
     color: white;
+}
+.for_user_items {
+    display: flex;
+    justify-content: flex-start;
+    margin: 40px 0;
+}
+.for_user_items .item {
+    margin-right: 20px;
+}
+.for_user h2 {
+    color: white;
+    margin-bottom: 10px;
 }
 
 
 #player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 80px;
     background-color: #282828;
+}
+.song_name {
+    width: 250px;
+}
+.timeline {
+    flex-grow: 1;
 }
