@@ -30,7 +30,7 @@ body {
     padding: 10px 40px;
     border: 1px solid white;
     border-radius: 30px;
-    margin-right: 25px;
+    margin-right: 30px;
 }
 
 /* main */
@@ -58,7 +58,7 @@ body {
     margin-bottom: 10px;
 }
 .nav_top a {
-    padding: 5px 90px 5px 20px;
+    padding: 5px 70px 5px 20px;
 }
 .nav_top a {
     display: flex;
@@ -176,6 +176,7 @@ body {
     align-items: center;
     width: calc((100% / 6) - 20px);
     margin-bottom: 20px;
+    margin-right: 20px;
 }
 .item img {
     width: 100%;
@@ -185,7 +186,26 @@ body {
     margin: 15px 0;
     color: white;
 }
-
+.music_img {
+    position: relative;
+}
+.layover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+}
+.layover i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white
+}
 .items {
     display: flex;
     justify-content: flex-start;
@@ -193,15 +213,15 @@ body {
     margin: 40px 0;
 }
 
-.item:not(:last-child) {
-    margin-right: 20px;
-}
 .artist h2,
 .for_user h2 {
     color: white;
     margin-bottom: 10px;
 }
 .artist img {
+    border-radius: 50%;
+}
+.artist .layover {
     border-radius: 50%;
 }
 
@@ -231,12 +251,13 @@ body {
     margin: 0 10px;
 }
 .timeline {
-    height: 60px;
+    height: 100%;
     width: calc(100% - 440px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding: 10px 0;
 }
 .comands {
     width: 220px;
@@ -262,6 +283,7 @@ body {
 .timeline .line {
     display: flex;
     width: 80%;
+    align-items: center;
 }
 .time {
     display: flex;
@@ -271,6 +293,7 @@ body {
 }
 .line_volume {
     display: flex;
+    align-items: center;
     width: 45%;
 }
 .volume {
@@ -290,6 +313,55 @@ body {
     width: 70%;
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.2);
+}
+.line_volume i,
+.time i {
+    display: none;
+}
+
+/* hover */
+#home .new_playlist:hover,
+.download:hover,
+#home span:hover,
+#home a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.upgrade a:hover {
+    transform: scale(1.1);
+}
+
+.song_name h6:hover {
+    cursor: pointer;
+    color: white;
+    text-decoration: underline;
+}
+
+#player i:hover {
+    cursor: pointer;
+    color: white;
+}
+#player .fa-play-circle:hover {
+    transform: scale(1.1);
+}
+#player .line_volume:hover .volume_left,
+#player .line:hover .time_left {
+    background-color: #ADFF2F;
+    cursor: pointer;
+}
+.time_right:hover,
+.volume_right:hover {
+    cursor: pointer;
+}
+#player .line:hover i,
+#player .line_volume:hover i {
+    display: block;
+}
+
+.music_img:hover .layover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 
