@@ -17,9 +17,10 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    width: calc(100% - 250px);
+    width: calc(100% - 220px);
     height: 100px;
     background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
 }
 .upgrade a {
     text-decoration: none;
@@ -41,9 +42,8 @@ body {
 .nav_aside {
     display: flex;
     flex-direction: column;
-    width: 250px;
-    min-width: 250px;
     background-color: black;
+    overflow: hidden;
 }
 #home a {
     color: rgba(255, 255, 255, 0.6);
@@ -51,20 +51,22 @@ body {
 #logo {
     margin: 20px 20px 25px 20px;
     width: 160px;
+    height: auto;
 }
-.nav_list {
-    list-style: none;
+#logo_small {
+    height: 30px;
+    margin-bottom: 10px;
 }
-.nav_list.nav li {
+.nav_top a {
     padding: 5px 90px 5px 20px;
 }
-.nav_list a {
+.nav_top a {
     display: flex;
     align-items: center;
     font-weight: 500;
     text-decoration: none;
 }
-.nav_list img {
+.nav_top img {
     height: 25px;
     padding-right: 5px;
 }
@@ -139,7 +141,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 50px;
+}
+.nav_bar span {
+    position: relative;
+    margin: 20px 10px 40px;
+    padding-bottom: 5px;
 }
 .nav_bar a {
     text-decoration: none;
@@ -147,25 +153,29 @@ body {
     margin: 0 10px;
     color: rgba(255, 255, 255, 0.6);
 }
+.border_center {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    border-bottom: 2px solid #ADFF2F;
+    width: 40px;
+}
 .recently h2 {
     margin: 20px 0;
     color: white;
 }
 .wrapper {
-    padding: 0 40px;
+    padding: 0 20px;
 }
-.recently_items {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
+
 .item {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: calc((100% / 6) - 20px);
+    margin-bottom: 20px;
 }
 .item img {
     width: 100%;
@@ -175,17 +185,24 @@ body {
     margin: 15px 0;
     color: white;
 }
-.for_user_items {
+
+.items {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     margin: 40px 0;
 }
-.for_user_items .item {
+
+.item:not(:last-child) {
     margin-right: 20px;
 }
+.artist h2,
 .for_user h2 {
     color: white;
     margin-bottom: 10px;
+}
+.artist img {
+    border-radius: 50%;
 }
 
 
@@ -195,11 +212,13 @@ body {
     align-items: center;
     height: 80px;
     background-color: #282828;
+    z-index: 5;
 }
 .song_name {
     display: flex;
     align-items: center;
-    width: 250px;
+    width: 220px;
+    height: 100%;
 }
 .text_song_name {
     flex-grow: 1;
@@ -213,14 +232,14 @@ body {
 }
 .timeline {
     height: 60px;
-    flex-grow: 1;
+    width: calc(100% - 440px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 .comands {
-    width: 250px;
+    width: 220px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -230,43 +249,224 @@ body {
 }
 .timeline .time_left {
     height: 4px;
-    width: 100px;
+    width: 30%;
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.6);
 }
 .timeline .time_right {
     height: 4px;
-    width: 350px;
+    width: 70%;
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.2);
 }
 .timeline .line {
     display: flex;
-    margin: 0 25px;
+    width: 80%;
 }
 .time {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 50%;
 }
 .line_volume {
     display: flex;
+    width: 45%;
 }
 .volume {
-    width: 250px;
+    width: 220px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 .volume_left {
     height: 4px;
-    width: 30px;
+    width: 30%;
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.6);
 }
 .volume_right {
     height: 4px;
-    width: 80px;
+    width: 70%;
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+@media screen and (min-width: 700px) {
+  
+    .nav_aside {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    #logo_small {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+  
+    .item {
+        width: calc((100% / 4) - 20px);
+    }
+    .comands {
+        width: 180px;
+    }
+    .time {
+        width: 75%;
+    }
+    
+
+}
+
+@media screen and (min-width: 700px) {
+  
+    #home .nav_top a:first-of-type {
+        border-left: 3px solid #ADFF2F;
+        color: white;
+    }
+
+
+}
+
+@media screen and (max-width: 900px) {
+  
+    .item {
+        width: calc((100% / 2) - 20px);
+    }
+
+    .icon_song_name {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    }
+
+    .time {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+  
+    .nav_aside {
+        font-size: 0;
+        justify-content: space-between;
+        min-width: 50px;
+    }
+
+    .nav_top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 17%;
+    }
+    .nav_top a,
+    .nav_top img {
+        padding: 0;
+    }
+
+    .new_playlist,
+    .nav_aside h4,
+    .nav_center,
+    #logo {
+        display: none;
+    }
+
+    .nav_bottom {
+        height: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav_bottom img {
+        margin: 0;
+    }
+    .download,
+    .profile {
+        padding: 0;
+        width: auto;
+        border: none;
+    }
+
+    .song_name {
+        width: 25%;
+    }
+    .volume {
+        width: 25%;
+    }
+    .timeline {
+        width: 50%;
+    }
+    .upgrade {
+        width: calc(100% - 50px);
+    }
+    .upgrade a {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .icon_song_name,
+    .volume {
+        display: none;
+    }
+    .timeline {
+        width: 70%;
+    }
+    .comands {
+        width: 90%;
+    }
+    .song_name {
+        width: auto;
+    }
+    .song_name img {
+        margin: 0 5px;
+        width: 40px;
+    }
+    .text_song_name {
+        flex-grow: 0;
+    }
+    .time {
+        width: 90%;
+    }
+    .timeline .line {
+        width: 80%;
+        margin: 0 5px;
+    }
+    .nav_bar {
+        justify-content: flex-start;
+    }
+    .nav_bar span {
+        margin: 20px 0px 10px;
+    }
+    .nav_bar a {
+        font-size: 14px;
+    }
+    .item h5 {
+        font-size: 10px;
+    }
+    .item h3 {
+        font-size: 14px;
+    }
+    
+
+}
+
+@media screen and (max-height: 180px) {
+  
+    .upgrade {
+        display: none;
+    }
+    .music {
+        padding-top: 0;
+    }
+
 }
